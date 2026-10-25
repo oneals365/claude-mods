@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A /hq dashboard pane with your to-dos, the emails waiting on you (Gmail) and today's calendar, plus a one-line strip above the prompt.",
   "types": "./types/index.d.ts",
   "userConfig": {

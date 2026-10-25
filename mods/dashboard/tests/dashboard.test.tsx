@@ -85,3 +85,13 @@ test('a missing connector says so in one line', async ($, on) => {
   expect((await ui.find({ type: 'Text', text: /Gmail/ }))?.text).toContain('No Gmail connector')
   await ui.unmount()
 })
+
+test('/hq inbox opens straight on the Inbox tab', async ($, on) => {
+  engine(on)
+  await $.session.start({ cwd: '/', surface: 'terminal', isInteractive: true })
+  const ran = await $.command.run({ command: 'hq', args: 'inbox' })
+  expect(ran.text).toBe('Dashboard opened (Inbox).')
+  const ui = await $.ui.mount({ ...PANE, surface: 'terminal' })
+  expect((await ui.find({ type: 'Text', text: /Kerry-Ann/ }))?.text).toContain('Can I move Tuesday session?')
+  await ui.unmount()
+})

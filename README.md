@@ -6,7 +6,7 @@ Five ready-built mods for Claude Code. They're built and tested against v2.1.310
 | --- | --- | --- |
 | **team-room** | A Team pane listing every message between your Claude Code sessions, newest on top. `/standup` asks each teammate session for a one-line "done / next" update. | `/team`, `/standup`, or `/standup prospector outreach` |
 | **saver** | Checks each prompt. Easy ones (typos, renames, formatting, short summaries, quick questions) go to Claude Haiku 5.5, and hard ones stay on your main model. A strip above the prompt shows the model that answered last and what you saved today at list prices. Below 100K context only. | `/saver on`, `/saver off`, `/saver` |
-| **dashboard** | A pane with three tabs: **To-do** (kept between sessions), **Inbox** (Gmail threads from the last 24h not sent by you), and **Today** (Google Calendar). It refreshes every 10 minutes. A strip above the prompt reads like `3 to-dos · 2 to answer · next: 2 PM call`. | `/hq` (Claude Code now ships its own `/dashboard`), `/todo <task>` |
+| **dashboard** | A pane with three tabs: **To-do** (kept between sessions), **Inbox** (Gmail threads from the last 24h not sent by you), and **Today** (Google Calendar). It refreshes every 10 minutes. A strip above the prompt reads like `3 to-dos · 2 to answer · next: 2 PM call`. | `/hq`, `/hq inbox`, `/hq today` (Claude Code now ships its own `/dashboard`), `/todo <task>` |
 | **hud** | A line above the prompt with your git branch, a context-window bar that turns red past 80%, and your 5-hour and weekly limits as health bars. | Always on |
 | **session-tools** | A desktop notification when a turn longer than 2 minutes finishes, and a row per turn in `claude-costs.csv` in the project folder. | Always on |
 

@@ -212,7 +212,11 @@ export const register: Register = (on, options) => {
   let isTicking = false
 
   on('session.start', async ($, e, next) => {
-    await $.command.register({ name: 'hq', description: 'Open your dashboard: to-dos, emails waiting on you, today' })
+    await $.command.register({
+      name: 'hq',
+      description: 'Open your dashboard: to-dos, emails waiting on you, today',
+      argumentHint: '[todo|inbox|today]',
+    })
     await $.command.register({ name: 'todo', description: 'Add a to-do to the dashboard', argumentHint: '<task>' })
     const stored = await $.store.get(STORE_TODOS)
     if (Array.isArray(stored)) await update($, todos, () => stored as Todo[])
@@ -224,10 +228,18 @@ export const register: Register = (on, options) => {
     return next(e)
   })
 
-  on('command.run', { command: 'hq' }, async $ => {
+  on('command.run', { command: 'hq' }, async ($, e) => {
+    const arg = e.args.trim().toLowerCase()
+    const pick: Tab | undefined =
+      arg === '1' || arg.startsWith('todo') || arg.startsWith('to-do') ? 'todo'
+        : arg === '2' || arg.startsWith('inbox') || arg.startsWith('mail') || arg.startsWith('email') ? 'inbox'
+          : arg === '3' || arg.startsWith('today') || arg.startsWith('cal') ? 'today'
+            : undefined
+    if (pick) await update($, tab, () => pick)
     void refreshAll($, cfg)
     const { isPlaced } = await $.ui.open({ id: PANE, title: 'Dashboard' })
-    return { text: isPlaced ? 'Dashboard opened.' : 'Dashboard is ready; this surface does not dock panes.' }
+    const shown = pick ? ` (${pick === 'todo' ? 'To-do' : pick === 'inbox' ? 'Inbox' : 'Today'})` : ''
+    return { text: isPlaced ? `Dashboard opened${shown}.` : 'Dashboard is ready; this surface does not dock panes.' }
   })
 
   on('command.run', { command: 'todo' }, async ($, e) => {
