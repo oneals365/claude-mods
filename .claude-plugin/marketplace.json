@@ -1,0 +1,34 @@
+{
+  "name": "oneals-mods",
+  "owner": { "name": "oneals365" },
+  "metadata": {
+    "description": "Claude Code mods: Team Room, Saver, Dashboard, HUD and session tools."
+  },
+  "plugins": [
+    {
+      "name": "team-room",
+      "source": "./mods/team-room",
+      "description": "Team pane of every message between your sessions, plus /standup."
+    },
+    {
+      "name": "saver",
+      "source": "./mods/saver",
+      "description": "Sends easy prompts to Claude Haiku 5.5 and shows what you saved."
+    },
+    {
+      "name": "dashboard",
+      "source": "./mods/dashboard",
+      "description": "/hq pane with to-dos, emails waiting on you and today's calendar."
+    },
+    {
+      "name": "hud",
+      "source": "./mods/hud",
+      "description": "Git branch, context bar and 5-hour/weekly usage bars above the prompt."
+    },
+    {
+      "name": "session-tools",
+      "source": "./mods/session-tools",
+      "description": "Notification for turns over 2 minutes, and a claude-costs.csv row per turn."
+    }
+  ]
+}

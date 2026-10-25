@@ -1,0 +1,26 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "description": "A /hq dashboard pane with your to-dos, the emails waiting on you (Gmail) and today's calendar, plus a one-line strip above the prompt.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "gmailServer": {
+      "type": "string",
+      "title": "Gmail server",
+      "description": "The Gmail MCP server's name as /mcp lists it. Leave empty to find it automatically.",
+      "default": ""
+    },
+    "calendarServer": {
+      "type": "string",
+      "title": "Calendar server",
+      "description": "The Google Calendar MCP server's name as /mcp lists it. Leave empty to find it automatically.",
+      "default": ""
+    },
+    "myEmail": {
+      "type": "string",
+      "title": "My email",
+      "description": "Your address, so threads where you sent the last message are left out of Inbox.",
+      "default": ""
+    }
+  }
+}

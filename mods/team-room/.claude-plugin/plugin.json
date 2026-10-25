@@ -1,0 +1,14 @@
+{
+  "name": "team-room",
+  "version": "0.1.0",
+  "description": "A Team pane of every message between your Claude Code sessions, plus /standup to get a one-line update from each.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "team": {
+      "type": "string",
+      "title": "Team",
+      "description": "Session names /standup asks, comma-separated (rename sessions with /rename).",
+      "default": "prospector, outreach"
+    }
+  }
+}

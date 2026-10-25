@@ -1,0 +1,6 @@
+{
+  "name": "hud",
+  "version": "0.1.0",
+  "description": "A heads-up line above the prompt: git branch, a context-window bar that turns red past 80%, and your 5-hour and weekly usage as health bars.",
+  "types": "./types/index.d.ts"
+}

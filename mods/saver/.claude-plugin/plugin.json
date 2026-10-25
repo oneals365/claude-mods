@@ -1,0 +1,6 @@
+{
+  "name": "saver",
+  "version": "0.1.0",
+  "description": "Sends easy prompts (typos, renames, formatting, quick questions) to Claude Haiku 5.5 and shows what you saved above the prompt.",
+  "types": "./types/index.d.ts"
+}

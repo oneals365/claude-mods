@@ -1,0 +1,5 @@
+{
+  "name": "session-tools",
+  "version": "0.1.0",
+  "description": "A notification when a turn over 2 minutes finishes, and a claude-costs.csv row per turn."
+}
